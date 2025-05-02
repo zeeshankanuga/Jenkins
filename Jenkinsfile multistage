@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('Front End') {
+                agent { 
+                    docker { image 'node:18-alpine' }
+                        }
+                steps
+                {
+                    sh 'node --version'
+                }
+                }
+                
+        stage('Back End') {
+                agent { 
+                    docker { image 'python:3.9-slim' }
+                        }
+                steps
+                {
+                    sh 'python --version'
+                }
+                }
+                
+            }
+        }
+        
